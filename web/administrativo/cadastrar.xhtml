@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"  >
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<link rel="stylesheet" href="../css/bootstrap.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../css/bootstrap-theme.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="all"/>
+<title>Sistema de Controle Acadêmico</title>
+</h:head>
+<h:body>
+<div class="divTopo">
+    <ul class="menu"><h:form>
+        <li><h:commandLink action="#{loginBean.inicio}" value="Inicio"/></li>
+	<li><a href="#">Cadastrar</a>
+            <ul><li><h:commandLink value="Gerenciar aluno" action="#{loginBean.cadastrar}"/></li></ul>  		
+	</li>                 
+    </h:form></ul>
+</div>
+<div class="formularioCorpo">
+    <h1>Cadastro de Alunos</h1>
+        <h:form id="cadastro">
+            <h:messages/>
+                <h:inputHidden value="#{alunocadastroBean.id}"/>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Cpf:" for="cpf"/>
+                    <h:inputText id="cpf" label="Cpf" value="#{alunocadastroBean.cpf}" size="10" maxlength="12" required="true" requiredMessage="O Cpf é obrigatório!"><f:validateLength minimum="5" maximum="12"/></h:inputText>
+                    
+                    <h:outputLabel value="Nome:" for="nome"/>
+                    <h:inputText id="nome" label="Nome" value="#{alunocadastroBean.nome}" size="30" maxlength="30" required="true" requiredMessage="O nome é obrigatório!"><f:validateLength minimum="10" maximum="30"/></h:inputText>
+                    
+                    <h:outputLabel value="Data Nascimento:" for="datanascimento"/>
+                    <h:inputText id="datanascimento" label="DataNascimento" value="#{alunocadastroBean.datanascimento}" size="10" maxlength="10" required="true" ></h:inputText>
+                    
+                    <h:outputLabel value="Login:" for="login"/>
+                    <h:inputText id="login" label="Login" value="#{alunocadastroBean.login}" size="30" maxlength="30" required="true" requiredMessage="O Login é obrigatório!"><f:validateLength minimum="10" maximum="30"/></h:inputText>
+                    
+                    <h:outputLabel value="Senha:" for="senha"/>
+                    <h:inputSecret id="senha" label="Senha" value="#{alunocadastroBean.senha}" size="20" maxlength="20" required="true" redisplay="true" />
+                    
+                    <h:outputLabel value="Tipo:" for="tipoacesso"/>
+                    <h:selectOneMenu id="tipoacesso" value="#{alunocadastroBean.tipo}" required="true">
+                        <f:selectItem itemValue="aluno" itemLabel="Aluno"/>
+                    </h:selectOneMenu>
+                    
+                    <h:outputLabel value="e-Mail:" for="email"/>
+                    <h:panelGroup>
+                        <h:inputText id="email" label="e-Mail" value="#{alunocadastroBean.email}" size="50" maxlength="50" required="true" validatorMessage="e-mail inválido"><f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+"/></h:inputText>
+                        <h:message for="email"/>
+                    </h:panelGroup>
+                </h:panelGrid>
+                <h:commandButton action="#{alunocadastroBean.salvar()}" value="Cadastrar" class="btn btn-success"/>
+        </h:form>
+</div>
+<div class="divRodape">Sistema desenvolvido por Talison Rafael</div>
+</h:body>
+</html>

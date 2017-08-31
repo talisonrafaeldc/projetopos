@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" 
+xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" xmlns:f="http://java.sun.com/jsf/core"
+xmlns:ui="http://java.sun.com/jsf/facelets"  >
+<h:head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="css/bootstrap-theme.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all"/>
+<title>Sistema de Controle Acadêmico</title>
+</h:head>
+<h:body>
+<div class="divTopo">
+    <ul class="menu">
+		<li><a href="principal.jsp">Home</a></li>
+                
+		<li><a href="#">Médicos</a>
+		<ul>
+                   <li><a href="medico/listaMedico.jsp">Listar Médicos</a></li>
+                   <li><a href="medico/cadastroMedico.jsp">Cadastrar</a></li>
+		</ul>  		
+		</li>
+		<li><a href="#">Pacientes</a>
+                <ul>
+                   <li><a href="paciente/listaPaciente.jsp">Listar Pacientes</a></li>
+                   <li><a href="paciente/cadastroPaciente.jsp">Cadastrar</a></li>
+                </ul>
+                </li>
+		<li><a href="#">Agendamentos</a>
+                <ul>
+                   <li><a href="agendamento/cadastroConsulta.jsp">Cadastrar Consulta</a></li>
+                   <li><a href="agendamento/excluirConsulta.jsp">Excluir Consulta</a></li>
+                   <li><a href="agendamento/buscaConsulta.jsp">Buscar Consulta</a></li>
+                </ul>
+                </li>                 
+            </ul>
+</div>
+<fieldset>
+	<div class="formularioCorpo">
+		<div class="form-group">
+                    <div id="page-wrapper">
+                        <ui:insert name="corpo"></ui:insert>
+                    </div>
+		</div>
+	</div>
+</fieldset>
+    <div class="divRodape">
+        Sistema desenvolvido por Talison Rafael.
+    </div>
+</h:body>
+</html>

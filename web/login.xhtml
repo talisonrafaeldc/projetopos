@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="template.xhtml">
+        <ui:define name="corpo">
+            <div class="titulo">
+                <legend>Login</legend>
+                <div class="col-sm-5">
+            <h:form id="loginForm">
+ 
+                <h:panelGrid id="loginPanel" columns="2">
+                    
+                    <label for="nome" class="control-label">Nome:</label>
+ 
+                    <h:inputText id="username" value="#{loginBean.uname}" ></h:inputText>
+ 
+                    <label for="senha" class="control-label">Senha:</label>
+ 
+                    <h:inputSecret id="password" value="#{loginBean.password}"></h:inputSecret>
+                    
+                    <label for="senha" class="control-label">Módulo de acesso:</label>
+                    
+                    <h:selectOneMenu id="tipoacesso" value="#{loginBean.tipo}" required="true">
+                        <f:selectItem itemValue="aluno" itemLabel="Aluno"/>
+                        <f:selectItem itemValue="administrativo" itemLabel="Administrativo"/>
+                        <f:selectItem itemValue="curso" itemLabel="Cursos"/>
+                        <f:selectItem itemValue="matricula" itemLabel="Matricula"/>
+                        <f:selectItem itemValue="curriculosehorario" itemLabel="Currículos e Horários"/>
+                        <f:selectItem itemValue="relatoriosacompanhamento" itemLabel="Relatórios de Acompanhamentos"/>
+                    </h:selectOneMenu>
+                    
+                </h:panelGrid>
+                <h:commandButton action="#{loginBean.loginProject}" value="Entrar" class="btn btn-success" />
+ 
+            </h:form>
+ 
+            </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>

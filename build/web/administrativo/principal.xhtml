@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"  >
+<h:head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="css/bootstrap-theme.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all"/>
+<title>Sistema de Controle Acadêmico</title>
+</h:head>
+<div class="divTopo">
+    <ul class="menu"><h:form>
+        <li><h:commandLink action="#{loginBean.inicio}" value="Inicio"/></li>
+	<li><a href="#">Cadastrar</a>
+            <ul><li><h:commandLink value="Gerenciar aluno" action="#{loginBean.cadastrar}"/></li></ul>  		
+	</li>                 
+    </h:form></ul>
+</div>
+    <div class="formularioCorpo">
+        <h:form>
+            <p>Bem vindo, #{loginBean.uname}</p>Aluno
+        <h:commandButton action="#{loginBean.logout}" value="Sair" ></h:commandButton>
+        </h:form>
+    </div>
+<div class="divRodape">Sistema desenvolvido por Talison Rafael</div>
+</html>

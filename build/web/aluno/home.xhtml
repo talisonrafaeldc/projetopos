@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"  >
+<h:head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="css/bootstrap-theme.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all"/>
+<title>Sistema de Controle Acadêmico</title>
+</h:head>
+    <h:form>
+<div class="divTopo">
+    <ul class="menu">
+        <li><h:commandButton action="#{alunoBean.inicio}" value="Inicio"/></li>
+		<li><a href="#">Disciplinas</a>
+		<ul>
+                    <li><h:commandButton value="Disciplinas cursadas" action="#{alunoBean.disciplinasCursadas}"/></li>
+                    <li><h:commandButton value="Disciplinas a cursar" action="#{alunoBean.disciplinasAcursar}"/></li>
+		</ul>  		
+		</li>
+		<li><a href="#">Grade</a>
+                <ul>
+                   <li><a href="#">Grade curricular</a></li>
+                   <li><a href="#">Horário</a></li>
+                </ul>
+                </li>
+		<li><a href="#">Situação Acadêmica</a>
+                <ul>
+                   <li><a href="#.jsp">Consultar situação acadêmica</a></li>
+                </ul>
+                </li>                 
+            </ul>
+</div>
+        </h:form>
+    <div class="formularioCorpo">
+        <h:form>
+            <p>Bem vindo, #{loginBean.uname}</p>Aluno
+        <h:commandButton action="#{loginBean.logout}" value="Sair" ></h:commandButton>
+        </h:form>
+    </div>
+<div class="divRodape">Sistema desenvolvido por Talison Rafael</div>
+</html>
